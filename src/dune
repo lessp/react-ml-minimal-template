@@ -6,7 +6,7 @@
  (libraries reason-react)
  (modules :standard)
 
- ; Uncomment the following to copy the generated JavaScript files inside the source tree
+ ; Uncomment the following to copy the generated JS files inside `src`
  ; (promote (until-clean))
 
  (preprocess
