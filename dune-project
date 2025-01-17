@@ -15,7 +15,7 @@
  (name react_ml_minimal)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune melange reason-react reason-react-ppx opam-check-npm-deps mlx ocamlmerlin-mlx)
+ (depends ocaml dune melange reason-react reason-react-ppx mlx ocamlmerlin-mlx)
  (tags
   ("add topics" "to describe" your project)))
 
