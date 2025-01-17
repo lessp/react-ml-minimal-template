@@ -33,7 +33,7 @@ For convenience the bundled Melange JS app is imported in
 bun run preview # alternatively `bun run dev` for live-reloading
 ```
 
-## Adding bindings a React component
+## Adding bindings to a React component
 
 Install the JS dependencies:
 
