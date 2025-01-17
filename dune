@@ -1,0 +1,5 @@
+(dirs :standard \ node_modules) 
+
+; process all dirs exclcuding dirs starting with an underscore
+; ignore `node_modules`
+; Reference: https://dune.readthedocs.io/en/stable/reference/predicate-language.html#predicate-language
