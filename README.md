@@ -33,6 +33,44 @@ For convenience the bundled Melange JS app is imported in
 bun run preview # alternatively `bun run dev` for live-reloading
 ```
 
+## Adding bindings a React component
+
+Install the JS dependencies:
+
+```sh
+bun add react-markdown
+```
+
+Look at the basic usage of the library and create the bindings accordingly.
+
+```js
+import Markdown from 'react-markdown'
+       ^^^^^^^^
+/* uses default export */
+
+const markdown = '# Hi, *Pluto*!'
+<Markdown>{markdown}</Markdown>
+```
+
+Create a file e.g. `src/bindings/ReactMarkdown.mlx`:
+
+```ocaml
+(* ReactMarkdown.mlx *)
+external make: children:string -> React.element = "default"
+[@@mel.module "react-markdown"] [@@react.component]
+```
+
+Use the bindings in your ReasonReact component:
+
+```ocaml
+(* App.mlx *)
+let[@react.component] make () =
+  let markdown = "# Hi, *Pluto*!" in
+
+  <ReactMarkdown>markdown</ReactMarkdown>
+;;
+```
+
 # License
 
 MIT
