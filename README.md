@@ -1,4 +1,4 @@
-# React.ml Minimal Starter Template
+# ReasonReact (React for OCaml) Minimal Starter Template
 
 This is a minimal starter template for a ReasonReact project.
 
