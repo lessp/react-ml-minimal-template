@@ -1,0 +1,13 @@
+(version 1.21.0+binary-ocaml-5.2.1-built-2025-01-16.0-aarch64-apple-darwin)
+
+(install
+ (progn
+  (run find . -type d -exec mkdir -p %{prefix}/{} ";")
+  (run find . -type f -exec cp {} %{prefix}/{} ";")))
+
+(source
+ (fetch
+  (url
+   https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2025-01-16.0/ocaml-lsp-server.1.21.0+binary-ocaml-5.2.1-built-2025-01-16.0-aarch64-apple-darwin.tar.gz)
+  (checksum
+   sha256=6177a5502fceaa46692438c7de57d0b91395250cc5a5adbd481144f2525cf18a)))

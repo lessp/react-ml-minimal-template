@@ -5,10 +5,8 @@
  (alias react)
  (libraries reason-react)
  (modules :standard)
-
  ; Uncomment the following to copy the generated JS files inside `src`
  ; (promote (until-clean))
-
  (preprocess
   (pps melange.ppx reason-react-ppx))
  (module_systems es6))

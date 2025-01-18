@@ -15,7 +15,6 @@ depends: [
   "melange"
   "reason-react"
   "reason-react-ppx"
-  "opam-check-npm-deps"
   "mlx"
   "ocamlmerlin-mlx"
   "odoc" {with-doc}

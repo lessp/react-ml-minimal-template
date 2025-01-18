@@ -1,8 +1,11 @@
-# ReasonReact (React for OCaml) Minimal Starter Template
+# React for OCaml Minimal Starter Template
 
-This is a minimal starter template for a ReasonReact project.
+This is a minimal starter template for a ReasonReact project. Using `bun`,
+`vite` and `dune`.
 
-### Install the Dune Developer Preview:
+Clone the repository and run the following commands to get started.
+
+### Install the [Dune Developer Preview](https://preview.dune.build/) (if you haven't already):
 
 ```sh
 curl -fsSL https://get.dune.build/install | sh
@@ -17,20 +20,23 @@ bun install
 ### Compile OCaml to JavaScript via Melange
 
 The output of the JS artifacts will be located under `_build/default/src/js`, as
-specified in the [src `dune`](./src/dune) file.
+specified in the [`./src/dune`](./src/dune) file.
 
 ```sh
-dune build # alternatively, keep the watcher running with `dune build -w`
+dune build -w # alternatively, `dune build` to build once
 ```
 
 ### Serve the project via Vite
 
-For convenience the bundled Melange JS app is imported in
-[`public/main.js`](./public/main.js) and then referenced in
-[`public/index.html`](./public/index.html).
+```sh
+bun run dev # for live-reloading
+```
+
+or
 
 ```sh
-bun run preview # alternatively `bun run dev` for live-reloading
+bun run build # to bundle everything
+bun run preview # to serve the bundle
 ```
 
 ## Adding bindings to a React component
@@ -46,17 +52,17 @@ Look at the basic usage of the library and create the bindings accordingly.
 ```js
 import Markdown from 'react-markdown'
        ^^^^^^^^
-/* uses default export */
+      /* uses default export */
 
 const markdown = '# Hi, *Pluto*!'
 <Markdown>{markdown}</Markdown>
 ```
 
-Create a file e.g. `src/bindings/ReactMarkdown.mlx`:
+Create a file e.g. `src/bindings/Markdown.mlx`:
 
 ```ocaml
-(* ReactMarkdown.mlx *)
-external make: children:string -> React.element = "default"
+(* Markdown.mlx *)
+external make: children:string -> React.element = "default" (* use default export *)
 [@@mel.module "react-markdown"] [@@react.component]
 ```
 
@@ -67,7 +73,7 @@ Use the bindings in your ReasonReact component:
 let[@react.component] make () =
   let markdown = "# Hi, *Pluto*!" in
 
-  <ReactMarkdown>markdown</ReactMarkdown>
+  <Markdown>markdown</Markdown>
 ;;
 ```
 

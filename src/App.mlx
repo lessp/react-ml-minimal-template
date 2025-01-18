@@ -14,4 +14,4 @@ let () =
   | Some element ->
     let root = ReactDOM.Client.createRoot element in
     ReactDOM.Client.render root <App />
-  ;;
+;;

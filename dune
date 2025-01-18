@@ -1,4 +1,4 @@
-(dirs :standard \ node_modules) 
+(dirs :standard \ node_modules)
 
 ; process all dirs exclcuding dirs starting with an underscore
 ; ignore `node_modules`
